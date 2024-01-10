@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom CSS for setting background image */
+      body {
+        background-image: url("registration_bg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px); /* Adding blur effect to the background */
+      }
+
+      /* Custom CSS for the form */
+      .form-container {
+        max-width: 400px;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.5
+        ); /* Transparent white background for form */
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      /* Custom CSS for the form title */
+      .form-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      a {
+        text-decoration: none; /* Remove underline by default */
+      }
+
+      a:hover {
+        text-decoration: none; /* Remove underline on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div
+        class="row justify-content-center align-items-center"
+        style="height: 100vh"
+      >
+        <div class="col-md-4">
+          <div class="card form-container">
+            <div class="card-body">
+              <h2 class="form-title">Registration Page</h2>
+              <form
+                id="registrationForm"
+                method="post"
+                th:action="@{/registration_submission}"
+              >
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Full Name"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    name="password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                  Submit
+                </button>
+              </form>
+              <p class="mt-3 text-center">
+                Already registered? <a th:href="@{/LoginPage}">Login</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
